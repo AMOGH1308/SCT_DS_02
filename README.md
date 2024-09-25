@@ -1,4 +1,4 @@
-Data cleaning and Exploratory Data Analysis(EDA) on a Titanic Dataset from Kaggle.
+#Data cleaning and Exploratory Data Analysis(EDA) on a Titanic Dataset from Kaggle.
 
 Data Cleaning:-
 ->first we load the csv file into a dataframe
