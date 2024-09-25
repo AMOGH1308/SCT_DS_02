@@ -1,34 +1,77 @@
-#Data cleaning and Exploratory Data Analysis(EDA) on a Titanic Dataset from Kaggle.
+# Titanic Dataset Analysis
 
-Data Cleaning:-
-->first we load the csv file into a dataframe
-->we take only the first 100 samples of data in a dataset using the head() function
-->we check if there are any null values
-->if we drop any duplicates present in the dataframe
-->we remove 'cabin' column from the dataframe because most of its values are Nan values and it is not useful for our further analysis part.
-->in the 'Age' column we fill the Nan values with the median value of all the values present in the age column.
-->in the 'Embarked' column the Nan values are filled using the mode() function(i.e it is filled with the most commonly reccuring values in that column).
-->we replace all the string values present in categorial variables such as sex and embarked with Numeric values(such as 0,1..etc) so that we can determine the distribution of each of these column which is required for the analytical part.
-->we remove any non-numeric values present in the column 'Ticket' column.
-->we drop the 'Name' column from the dataframe to make the dataframe ready for further EDA.
+This repository contains a detailed analysis of the Titanic dataset, focusing on Data Cleaning and Exploratory Data Analysis (EDA).
 
-Exploratory Data Analysis(EDA):-
-->we use the info() method to gather information of all the columns such as the dtype of all the columns,no of non-null values present in each column.
-->we use the describe() method to calculate various parameters such as mean,count,min etc.. of each column.
-->we determine the correlation matrix of the whole dataset and we display the whole corr matrix in the form of a heatmap plot.
-->then we find the distribution of univariate variables such as 'age','Fare' and we find the frequency of each of the these columns values individually using histogram plot.
-->distribution of categorial vairables such as 'sex','Survived','Pclass' to determine the frequency of each of their values
-->distribution of Bivariate variables such as:-
-      1). sex and Survived:-to determine which particular gender had a higher survival rate.
-      2). Pclass and Survived:-to determine the people in which passenger class(such as high,moderate or low class) had a higher survival rate.
+## Data Cleaning Process
 
-Trends and Patterns:-
-After a detailed Analysis of the first 100 data samples in a Dataframe we came to a Know that:-
-    1). most of the people in the ship were young individuals between the age of 20-30
-    2). many of them paid a fare of somewhere between 0-50 for their trip
-    3). males were more compared to females
-    4). no of people who died in this tragic incident is greater than the ones who survived
-    5). there were more people from the 3rd class compared to the other two classes.
-    6). females have a higher survival rate compared to males
-    7). the 2nd class(moderate class) had higher survival rate compared to the people under other classes
+1. **Loading the Dataset:**
+   - The dataset was loaded into a Pandas DataFrame using the `read_csv()` function.
+   
+2. **Selecting First 100 Samples:**
+   - We used the `head()` function to select the first 100 samples from the dataset for analysis.
+
+3. **Handling Missing Values:**
+   - Checked for null values using `isnull().sum()`.
+   - Dropped duplicates, if any.
+   - Removed the `Cabin` column due to a large number of missing values.
+   - Filled missing values in the `Age` column with the median value of the column.
+   - Filled missing values in the `Embarked` column using the mode (most frequent value).
+
+4. **Categorical Variable Encoding:**
+   - Converted string values in categorical variables like `Sex` and `Embarked` into numerical values (e.g., 0, 1) for analysis purposes.
+
+5. **Cleaning `Ticket` Column:**
+   - Removed non-numeric values in the `Ticket` column.
+
+6. **Dropping Unnecessary Columns:**
+   - The `Name` column was removed to simplify the analysis.
+
+## Exploratory Data Analysis (EDA)
+
+1. **General Information:**
+   - The `info()` method was used to display data types and the number of non-null values in each column.
+   
+2. **Descriptive Statistics:**
+   - The `describe()` method provided statistical insights such as mean, count, minimum, and maximum for numeric columns.
+
+3. **Correlation Analysis:**
+   - A correlation matrix was calculated and visualized using a heatmap to examine relationships between different numerical features.
+
+4. **Univariate Analysis:**
+   - Plotted histograms for variables like `Age` and `Fare` to understand their distribution and frequency.
+
+5. **Categorical Variable Distribution:**
+   - Analyzed variables like `Sex`, `Survived`, and `Pclass` to observe the frequency of each value.
+
+6. **Bivariate Analysis:**
+   - **Sex vs. Survived:** To analyze survival rates based on gender.
+   - **Pclass vs. Survived:** To examine which passenger class had higher survival rates.
+
+## Trends and Patterns
+
+1. **Age Distribution:**
+   - Most passengers were young, aged between 20-30 years.
+   
+2. **Fare Distribution:**
+   - Many passengers paid a fare between 0-50 for their trip.
+
+3. **Gender Distribution:**
+   - Males were more in number compared to females.
+
+4. **Survival Rate:**
+   - More people perished in the disaster than survived.
+   
+5. **Passenger Class Distribution:**
+   - The third class had the highest number of passengers.
+   
+6. **Gender Survival Rate:**
+   - Females had a higher survival rate compared to males.
+
+7. **Class Survival Rate:**
+   - Passengers in the second class (moderate class) had a higher survival rate compared to other classes.
+
+## Conclusion
+
+Through this analysis, we gained insights into the demographics and survival trends of passengers on the Titanic. The findings highlight key factors such as age, fare, gender, and class in determining survival likelihood.
+
       
